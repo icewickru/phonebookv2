@@ -81,17 +81,18 @@ class App {
 
 	
 	hideContactsBySearchCondition(text) {
+		text = text.toLowerCase();
 		$("tr").removeClass('hidden_by_search');	
 	
 		if (text != "") {
 			for(let contact_key in this.contactList) {
 				let contact = this.contactList[contact_key];
-				let isNameSatisfySearchFlag = (contact.name.indexOf(text) != -1);
+				let isNameSatisfySearchFlag = (contact.name.toLowerCase().indexOf(text) != -1);
 
 				let isPhoneSatisfySearchFlag = false;
 				for(let phone_key in contact.phones) {
 					let phone = contact.phones[phone_key];
-					if (phone.number.indexOf(text) != -1) {
+					if (phone.number.toLowerCase().indexOf(text) != -1) {
 						isPhoneSatisfySearchFlag = true;
 						break;
 					}
@@ -219,14 +220,6 @@ class App {
 						text: 'Удалить',
 						'data-contactid': contact.id,
 						click: function() {
-							/*
-							let _id = contact.id;
-							let _name = contact.name;
-						
-							$("#editcontact_id").val(_id);
-							$("#editcontact_name").val(_name);
-							$('#modalDeleteContact').modal('show');
-							*/
 							if (confirm("Действительно удалить контакт?")) {
 								$.post("/contact/delete", { id: contact.id }, function(data) {
 									location.reload();
