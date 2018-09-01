@@ -1,8 +1,4 @@
 <?php
-
-/* @var $this \yii\web\View */
-/* @var $content string */
-
 use app\widgets\Alert;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
@@ -38,9 +34,7 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            //['label' => 'Поиск', 'url' => 'javascript:void(0);', 'options' => ['id' => 'search']],
-			['label' => 'Поиск', 'url' => ['/contact/search'], 'options' => ['id' => 'search']],
-            ['label' => 'Добавить контакт', 'url' => ['/contact/add']],
+
         ],
     ]);
     NavBar::end();

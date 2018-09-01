@@ -1,6 +1,6 @@
 {
-    "name": "dnetrebko/phonebook",
-    "description": "Phonebook test app [dnetrebko@yandex.ru]",
+    "name": "dnetrebko/phonebook_v2",
+    "description": "Phonebook v2 test app [dnetrebko@yandex.ru]",
     "type": "project",
     "license": "MIT",
     "authors": [

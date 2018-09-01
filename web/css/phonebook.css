@@ -3,15 +3,51 @@ body {
 	padding: 0;
 }
 
-#container {
-	width: 960px;
-	margin: 0 auto;
+#contacts_table {
+	border-collapse: collapse;
 }
 
-#menu {
-	background: #c0c0c0;
+#contacts_table th {
+	padding: 5px;
+	border: 1px solid #808080;
 }
 
-#contacts {
-	background: #f8f8f8;
+#contacts_table td {
+	padding: 5px;
+	border: 1px solid #808080;
+}
+
+.contact_phone_container {
+	display: block;
+	border-radius: 5px;
+	margin: 3px 0;
+	padding: 2px;
+	background: #e0e0e0;
+}
+
+.contact_phone {
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.contact_phone_delete {
+	display: inline-block;
+	font-weight: bold;
+	color: #bb0000;
+	float: right;
+	margin-right: 5px;
+	cursor: pointer;
+}
+
+div.action_container {
+	display: inline-block;
+	margin-right: 5px;
+}
+
+div.action_container a {
+	cursor: pointer;
+}
+
+.hidden_by_search {
+	display: none;
 }

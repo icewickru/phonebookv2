@@ -1,0 +1,23 @@
+			<?php foreach($contacts as $contact): ?>
+			<tr>
+				<td><?php echo $contact->name; ?></td>
+				<td>
+					<div class="contact_phones" data-contactid="<?php echo $contact->id; ?>">
+						<?php foreach($contact->phones as $phone): ?>
+							<div class="contact_phone_container" data-contactid="<?php echo $contact->id; ?>" data-phoneid="<?php echo $phone->id; ?>">
+								<div class="contact_phone" data-contactid="<?php echo $contact->id; ?>" data-phoneid="<?php echo $phone->id; ?>">
+									<?php echo $phone->phone; ?>
+								</div>
+								<div class="contact_phone_delete" data-contactid="<?php echo $contact->id; ?>" data-phoneid="<?php echo $phone->id; ?>">
+									x
+								</div>								
+							</div>
+						<?php endforeach; ?>
+					</div>
+				</td>
+				<td>
+					<?php echo Html::a('Ред.', 'javascript:void(0);'); ?>
+					<?php echo Html::a('Удалить', 'javascript:void(0);'); ?>
+				</td>
+			</tr>			
+			<?php endforeach; ?>

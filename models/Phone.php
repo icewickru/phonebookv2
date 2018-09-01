@@ -34,8 +34,8 @@ class Phone extends ActiveRecord {
     public function rules()
     {
         return [
-            //['status', 'default', 'value' => self::STATUS_ACTIVE],
-            //['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
+			[['phone', 'contact_id'], 'required'],
+			[['phone', 'contact_id'], 'number'],
         ];
     }
 

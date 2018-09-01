@@ -1,5 +1,8 @@
-# phonebook
-Test phonebook app на Yii2
+# phonebook v2
+Test phonebook app на Yii2 (v2)
+
+Намеренно не используется виджет GridView
+Отличается от предыдущей версии большим использованием JavaScript
 
 1. Создание БД и таблиц:
 
@@ -22,6 +25,9 @@ Test phonebook app на Yii2
 
 >ALTER TABLE `phone`
   ADD PRIMARY KEY (`id`);
+
+>Внешний ключ таблицы `phone`
+>>ALTER TABLE `phone` ADD CONSTRAINT `phone_ibfk_1` FOREIGN KEY (`contact_id`) REFERENCES `contact` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
   
 2. Склонировать репозиторий в корень веб-сервера
 >git clone https://github.com/icewickru/phonebook.git
